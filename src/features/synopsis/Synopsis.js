@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { SYNOPSIS } from '../../app/shared/SYNOPSIS';
 import { BOOKS } from '../../app/shared/BOOKS';
-import { Container, Row, Col, Card, CardImg, CardBody, CardTitle } from 'reactstrap';
+import { Container, Row, Col, Card, CardImg, CardBody, CardTitle, Button } from 'reactstrap';
 import LoginModal from '../../components/LoginModal'; // Import your LoginModal component here
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const Synopsis = () => {
     const { bookid } = useParams();
@@ -27,6 +29,13 @@ const Synopsis = () => {
     return (
         <Container>
             <Row className="my-5">
+                <Col md="12">
+                    <Link to="/library" className="text-decoration-none text-dark">
+                        <FontAwesomeIcon icon={faArrowLeft} size="lg" /> Back to Library
+                    </Link>
+                </Col>
+            </Row>
+            <Row>
                 <Col md="6">
                     <Card>
                         <CardImg top width="100%" src={book.image} alt={book.name} />
@@ -39,7 +48,7 @@ const Synopsis = () => {
                     <h2>Synopsis</h2>
                     <p>{synopsis.text}</p>
                     <p><strong>Author:</strong> {synopsis.author}</p>
-                    <button className="btn btn-outline-success rounded-pill mb-2" onClick={toggleModal}>Continue Reading</button>
+                    <Button color="success" onClick={toggleModal}>Continue Reading</Button>
                 </Col>
             </Row>
             {/* Render the LoginModal component */}

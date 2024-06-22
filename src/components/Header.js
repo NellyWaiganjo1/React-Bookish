@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
-import { Navbar, NavbarBrand, Collapse, NavbarToggler, Nav, NavItem, Button } from 'reactstrap';
-import { FormControl } from 'react-bootstrap';
+import { Navbar, NavbarBrand, Collapse, NavbarToggler, Nav, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 
-const Header = ({ onSearch }) => {
-    const [searchTerm, setSearchTerm] = useState('');
-
-    const handleSearch = () => {
-        onSearch(searchTerm.trim()); // Call onSearch with trimmed searchTerm
-    };
-
+const Header = () => {
+    
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
@@ -43,17 +37,7 @@ const Header = ({ onSearch }) => {
                             Contact
                         </ScrollLink>
                     </NavItem>
-                    <FormControl
-                        type="search"
-                        placeholder="Search"
-                        className="me-2 d-flex"
-                        aria-label="Search"
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)} // Update searchTerm on input change
-                    />
-                    <Button className="form-button" variant="outline-success" onClick={handleSearch}>
-                        Search
-                    </Button>
+                    
                 </Nav>
             </Collapse>
         </Navbar>
