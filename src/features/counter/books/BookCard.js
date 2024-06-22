@@ -3,7 +3,7 @@ import { Card, CardImg, CardBody, CardTitle } from 'reactstrap';
 import LoginModal from '../../../components/LoginModal'; // Ensure correct path
 
 const BookCard = ({ book }) => {
-    const { key, title, coverUrl } = book;
+    const { title, coverUrl } = book;
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const toggleModal = () => {
