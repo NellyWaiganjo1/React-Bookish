@@ -11,7 +11,7 @@ const Hero = () => {
                 <h1 className='title'>Welcome to Bookish</h1>
                 <p className='para'>Immerse Yourself in a Sea of Stories at Bookish. Find Your Genre, Discover Your Next Adventure!</p>
                 <Link to="/library">
-                    <button className="btn btn-outline-success rounded-pill mb-2">Explore Now</button>
+                    <button className="btn btn-success rounded-pill mb-2">Explore Now</button>
                 </Link>
             </div>
             <div className="hero-overlay"></div> {/* Add a separate div for the gradient overlay */}

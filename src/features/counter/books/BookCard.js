@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardImg, CardBody, CardTitle, Button } from 'reactstrap';
+import { Card, CardImg, CardBody, CardTitle } from 'reactstrap';
 import LoginModal from '../../../components/LoginModal'; // Ensure correct path
 
 const BookCard = ({ book }) => {
@@ -16,9 +16,9 @@ const BookCard = ({ book }) => {
             <CardBody>
                 <CardTitle tag="h5">{title}</CardTitle>
                 
-                <Button className="btn rounded-pill ml-2" onClick={toggleModal}>
+                <button className="btn btn-success rounded-pill mb-2" onClick={toggleModal}>
                       View Details
-                </Button>
+                </button>
             </CardBody>
 
             {/* Login Modal */}

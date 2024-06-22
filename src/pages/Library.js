@@ -14,7 +14,14 @@ const Library = () => {
     };
 
     const handleSearchClick = () => {
-        setBooks([]);
+        // Assume fetchBooks is a function that fetches books based on the searchTerm
+        fetchBooks(searchTerm);
+    };
+
+    const fetchBooks = (term) => {
+        // Replace with your actual search logic
+        const filteredBooks = BOOKS.filter(book => book.name.toLowerCase().includes(term.toLowerCase()));
+        setBooks(filteredBooks);
     };
 
     return (
@@ -69,7 +76,7 @@ const Library = () => {
                                     <CardBody>
                                         <CardTitle tag="h5">{book.name}</CardTitle>
                                         <Link to={`/synopsis/${book.id}`}>
-                                            <Button className="btn rounded-pill mb-2">Read Synopsis</Button>
+                                            <button className="btn btn-success rounded-pill mb-2">Read Synopsis</button>
                                         </Link>
                                     </CardBody>
                                 </Card>
